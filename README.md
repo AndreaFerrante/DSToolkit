@@ -1,7 +1,5 @@
 # DSToolkit
-Data Science Toolkit
-
-This package will be containing methods for a Data Science life :tada: !
+DSToolkit stands for <i>Data Science Toolkit</i> package will be containing methods for a Data Science life :tada: !
 
 These methods are initially:
 
