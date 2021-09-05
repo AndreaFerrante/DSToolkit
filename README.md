@@ -1,6 +1,5 @@
 # DSToolkit
-DSToolkit stands for <i>Data Science Toolkit</i> package will be containing methods for a Data Science life :tada: !
-
+DSToolkit stands for <b>Data Science Toolkit</b> and it be containing methods that a Data Scientist should know :tada: ! <br>
 These methods are initially:
 
   * sorting
