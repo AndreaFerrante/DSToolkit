@@ -9,4 +9,4 @@ These methods are basically:
   * <b>Statistical</b> Class (Rejection and MonteCarlo Sampling, Statistical Distributions)
   * <b>Utilities</b> Class (Fibonacci Serie, Palindrome String) <br>
 
->Everysingle method <b>must be</b> implemented from scratch in Python (this is where the funny part comes into play :fire:) <br>
+>Every single method <b>must be</b> implemented from scratch in Python (this is where the funny part comes into play :fire:) <br>
