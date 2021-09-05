@@ -11,4 +11,4 @@ These methods are:
   * <b>Utilities</b> Class (Fibonacci Serie, Palindrome String) <br>
 
 >Every single method <b>must be</b> implemented from scratch in Python (this is where the funny part comes into play :fire:) <br>
->This package is not aimed in being complete ! It will be growing over time like a snowball falling on the Everest highest cliff 🗻
+>This package is not aimed to be complete ! It will be growing over time like a snowball falling on the Everest highest cliff 🗻
