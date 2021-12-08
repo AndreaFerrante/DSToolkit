@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(
     name                          = 'DSToolkit',
     version                       = '0.0.2',
-    description                   = 'Data Science practise methods collection',
+    description                   = 'Data Science practical methods collection',
     author                        = 'Andrea Ferrante',
     author_email                  = 'andreaferrante1986@gmail.com',
     classifiers                   = ['Development Status :: 3 - Alpha',
