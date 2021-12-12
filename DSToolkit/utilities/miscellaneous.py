@@ -179,91 +179,6 @@ def rec_fibo(n):
         return rec_fibo(n-1) + rec_fibo(n-2)
 
 
-def bubble_sort(arr):
-
-    arr_ = arr.copy()
-    n = len(arr_)
-
-    for i in range(n-1):
-        for j in range(n-i-1):
-            if arr_[j] > arr_[j+1]:
-                arr_[j], arr_[j+1] = arr_[j+1], arr_[j]
-
-    return arr_
-
-
-def binary_search(arr, el):
-
-    # The array must be sorted first :-) !
-
-    arr_ = arr.copy()
-    arr_ = bubble_sort(arr_)
-
-    left  = 0
-    right = len(arr_) - 1
-
-    while left <= right:
-        mid = round((right + left) / 2)
-        if el == arr_[mid]:
-            return True
-        elif el < arr_[mid]:
-            right = mid - 1
-        else:
-            left = mid + 1
-
-    return False
-
-
-def get_uniformdist(start:int=5, width:int=15, len:int=10000) -> list:
-
-    ud = []
-    for i in range(len):
-        ud.append( random.uniform(start, start+width) )
-
-    return ud
-
-
-def get_rnorm(mu, sigma, x):
-
-    el_1 = 1 / (np.sqrt(2 * np.pi * sigma**2))
-    el_2 = math.exp( -(x - mu)**2 / (2 * sigma**2)  )
-
-    return el_1 * el_2
-
-
-def get_exponential_distribution(lamb:int=0.1, start:int=0, end:int=30, step:int=0.001) -> list:
-
-    fx = np.arange(start, end, step)
-    ex = [ lamb * math.exp(-lamb * x) for x in fx ]
-
-    return ex
-
-
-def central_limit_theorem_from_exp(n:int=10, k:int=1000, lamb:int=0.1, dist:str='uniform') -> list:
-
-    def get_mean(arr):
-
-        n   = len(arr)
-        sum = 0
-
-        for i in range(n):
-            sum += arr[i]
-
-        return sum / n
-
-    clt = []
-    if dist == 'uniform':
-        pdf = get_uniformdist()
-    else:
-        pdf = get_exponential_distribution(lamb)
-
-    for i in range(k):
-        single = random.sample( pdf, n )
-        clt.append( get_mean(single) )
-
-    return clt
-
-
 def get_montecarlo(reps:int=75, lengths:int=1000):
 
     paths = []
@@ -373,12 +288,6 @@ def decorator_printer(str_input):
 decorator_printer('My first decorator...')
 
 
-arr[0:len(arr):2]
-
-
-########################################################################################################################
-#region UNDERSTANDING METHOD RESOLUTION ORDER (DIAMOND CLASS PROBLEM...)
-
 class A:
     def rk(self):
         print(" In class A")
@@ -397,40 +306,5 @@ class D(C, A, B):
 
 r = D()
 r.rk()
-
-#endregion
-########################################################################################################################
-
-
-# see the Central Limit Theorem out of the exponential distribution...
-samples = [5, 50, 100, 250, 1000, 5000]
-[plt.hist( central_limit_theorem_from_exp(n=x), bins=25, label=str(x) ) for x in samples]
-plt.title('Central Limit Theorem (n is the sample size)')
-plt.legend()
-
-
-
-# the smaller lambda inside an exponential distribution, the bigger the average and the bigger the variance...
-l = [0.1, 0.3, 0.5, 0.8]
-[plt.plot( get_exponential_distribution(x), label=str(x)) for x in l ]
-plt.title('Exponential Distributions')
-plt.legend()
-
-
-
-ud = get_uniformdist(10, 20, 10000)
-rd = [get_rnorm(0, 1, x) for x in np.arange(-3, 3, 0.1)]
-
-
-ax = sns.distplot(ud,
-                  bins     = 100,
-                  kde      = True,
-                  color    = 'skyblue',
-                  hist_kws = {"linewidth": 15,'alpha':1})
-ax.set(xlabel='Uniform Distribution ', ylabel='Frequency')
-
-
-
-
 
 
