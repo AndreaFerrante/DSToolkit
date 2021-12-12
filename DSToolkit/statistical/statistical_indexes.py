@@ -26,9 +26,21 @@ class StatisticalIndexes(object):
 		return res
 
 
-	def SampleMean(self, x:list=None):
+	def Power(self, base:float, exp:int):
 
-		return sum(x) / ( len(x) - 1 )
+		'''
+		...it would be easier to use the ** Python operator, but it would be less funny !
+		'''
+
+		if base == 0:
+			return 0
+		elif base == 1:
+			return 1
+		else:
+			res = base
+			for i in range(2, exp + 1):
+				res *= base
+			return res
 
 
 	def Mean(self, x:list=None):
@@ -38,11 +50,12 @@ class StatisticalIndexes(object):
 
 	def SampleVariance(self, x:list=None):
 
-		s_mean = self.SampleMean( x )
+		s_mean = self.Mean( x )
 		num    = sum( [(j - s_mean)**2 for j in x] )
 		den    = len(x) - 1
 
 		return num / den
+
 
 	def Variance(self, x:list=None):
 
@@ -51,6 +64,17 @@ class StatisticalIndexes(object):
 		den    = len(x)
 
 		return num / den
+
+
+	def StandardDeviationSample(self, x:list):
+
+		return self.SampleVariance(x) ** 0.5
+
+
+	def StandardDeviation(self, x:list):
+
+		return self.Variance(x) ** 0.5
+
 
 	def Covariance(self, x:list, y:list):
 
@@ -65,3 +89,11 @@ class StatisticalIndexes(object):
 		num = sum( [ (x[j] - mean_x) * (y[j] - mean_y) for j in range( den + 1 ) ] )
 
 		return num / den
+
+
+
+
+
+
+
+
