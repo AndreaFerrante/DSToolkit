@@ -1,13 +1,14 @@
-def bubble_sort(arr):
+import sys
+from pathlib import Path
 
-	n = len(arr)
-	for i in range(n - 1):
-		for j in range(n - i- 1):
-			if arr[j] > arr[j + 1]:
-				arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
-	return arr
+#############################################
+root_path = Path(__file__).parents
+sorting_  = str( root_path[1] ) + '/sorting/'
 
+sys.path.append( sorting_ )
+from quick_sort import *
+#############################################
 
 
 def binary_search(arr, el):
@@ -19,7 +20,7 @@ def binary_search(arr, el):
 	l = 0
 	r = len(arr) - 1
 
-	arr = bubble_sort(arr)
+	arr = quick_sort(arr)
 
 	while l <= r:
 
@@ -34,14 +35,13 @@ def binary_search(arr, el):
 	return False
 
 
-
 ###############################
 # Driver code here !
 ###############################
 
 
 arr = [1,3,6,5,7,9,8]
-if binary_search(arr, 4):
+if binary_search(arr, 5):
 	print('We found the element ! Hurray !')
 else:
 	print('We found no element...doh !')
