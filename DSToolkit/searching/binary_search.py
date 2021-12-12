@@ -35,13 +35,10 @@ def binary_search(arr, el):
 	return False
 
 
-###############################
-# Driver code here !
-###############################
+def test_binary_search():
 
-
-arr = [1,3,6,5,7,9,8]
-if binary_search(arr, 5):
-	print('We found the element ! Hurray !')
-else:
-	print('We found no element...doh !')
+	arr = [1,3,6,5,7,9,8]
+	if binary_search(arr, 5):
+		print('We found the element ! Hurray !')
+	else:
+		print('We found no element...doh !')
