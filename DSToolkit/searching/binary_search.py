@@ -11,11 +11,19 @@ from quick_sort import *
 #############################################
 
 
-def binary_search(arr, el):
+def binary_search(el, arr:list=None) -> bool:
 
-	#######################################
-	# The array passed must be sorted ! ! !
-	#######################################
+	'''
+	Binary search algo searches an element into an array by splitting this array in two parts and 
+	checking if the element is lower or bigger/equal than the element in the middle.
+	If the element is lower/bigger than the element in the middle, the algo keeps on splitting the
+	lowest/biggest part of the array until the value in the middle of the splitted array is EQUAL 
+	to the element we are searching out.
+	Given the nature of the algo, the array must be sorted first.
+
+	param el: element to be searched into the array passed as argument
+	param arr: list of element 
+	'''
 
 	l = 0
 	r = len(arr) - 1
@@ -33,12 +41,3 @@ def binary_search(arr, el):
 			l = mid + 1
 
 	return False
-
-
-def test_binary_search():
-
-	arr = [1,3,6,5,7,9,8]
-	if binary_search(arr, 5):
-		print('We found the element ! Hurray !')
-	else:
-		print('We found no element...doh !')
