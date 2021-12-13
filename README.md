@@ -10,5 +10,4 @@ These methods are:
   * <b>Statistical</b> Class (Rejection and MonteCarlo Sampling, Statistical Distributions)
   * <b>Utilities</b> Class (Fibonacci Serie, Palindrome String) <br>
 
->Every single method <b>must be</b> implemented from scratch in Python (this is where the funny part comes into play :fire:) <br>
->This package is not aimed to be complete and it will be growing over time.
+>Every single method <b>must be</b> implemented from scratch in Python (this is where the funny part comes into play :fire:) <br>. This package is not aimed to be complete and it will be growing over time.
