@@ -1,27 +1,27 @@
-# Binary Tree . . .
+# A binary tree is 
 
 
 class BinaryTree:
 
     def __init__(self, data):
 
-        self.data = data
+        self.data  = data
         self.right = None
-        self.left = None
+        self.left  = None
 
-    def insert(self, data):
+    def Insert(self, data):
 
         if self.data:
             if data < self.data:
                 if self.left is None:
                     self.left = BinaryTree(data)
                 else:
-                    self.left.insert(data)
+                    self.left.Insert(data)
             elif data > self.data:
                 if self.right is None:
                     self.right = BinaryTree(data)
                 else:
-                    self.right.insert(data)
+                    self.right.Insert(data)
         else:
             self.data = data
 
@@ -77,18 +77,19 @@ class BinaryTree:
 
 
 bt = BinaryTree(10)
-bt.insert(5)
-bt.insert(7)
-bt.insert(11)
-bt.insert(15)
+bt.Insert(8)
+bt.Insert(7)
+bt.Insert(11)
+bt.Insert(15)
+bt.Insert(3)
 bt.PrintTree()
 
 
-print(bt.InOrderTraversal(bt))
-print(bt.PreOrderTraversal(bt))
-print(bt.PostOrderTraversal(bt))
+#print(bt.InOrderTraversal(bt))
+#print(bt.PreOrderTraversal(bt))
+#print(bt.PostOrderTraversal(bt))
 
 
 new_bt = bt.InvertTree(bt)
-new_bt.PrintTree()
+#new_bt.PrintTree()
 
