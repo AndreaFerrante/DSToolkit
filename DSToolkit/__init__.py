@@ -4,5 +4,6 @@ __all__ = [
     "searching",
     "sorting",
     "statistical", 
-    "utilities"
+    "utilities",
+    "data_structures"
 ]
