@@ -1,10 +1,17 @@
-from .statistical_indexes import *
+from factory import *
 import numpy as np
-import random
+
+import sys
+from pathlib import Path
 
 
-x = [1,3,6,10,11]
-y = [1,3,6,10.5,11]
+#############################################
+root_path = Path(__file__).parents
+sorting_  = str( root_path[1] ) + '/sorting/'
+
+sys.path.append( sorting_ )
+from quick_sort import *
+#############################################
 
 
 class Correlations(object):
@@ -38,13 +45,31 @@ class Correlations(object):
 	def SpearmanCorrelation(self, x:list, y:list):
 
 		'''
+		Spearman correlation index is a non-parametric index for correlations.
+		This correlation index wants the variables to be sortable since it performs correlation
+	    measuring given the rank of the variables. 
+	    Differently from Pearson correlation index, Spearman correlation index measures how well 
+	    the relationship between two variables could be described by a monotonic relationship function.
+		Prectically, this index is nothing more than a sub-case of the Pearson correlation index 
+		performed over ranks.
+
+		param x: first list to analyze to see how much correlation is in place against y variable
+		param y: second list to analyze to see how much correlation is in place against x variable
 		'''
 
 		pass
 
 
+
+x = [1,3,6,2,11]
+y = [1,3,6,12,11]
+
+
+s  = StatisticalIndexes()
 si = Correlations()
-print(si.PearsonCorrelation(x, y))
-print(np.corrcoef(x, y))
+print(y)
+print('ranker', s.Ranker(y))
+#print(si.PearsonCorrelation(x, y))
+#print(np.corrcoef(x, y))
 
 

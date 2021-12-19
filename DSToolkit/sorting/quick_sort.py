@@ -25,7 +25,11 @@ def sort(arr, low, high):
 
 def quick_sort(arr):
 
-    n   = len(arr)
-    sort(arr, 0, n - 1)
+    ###################################################
+    # Copy the array for avoiding sorting it in place !
+    ###################################################
+    arr_ = arr.copy()
+    n    = len(arr_)
+    sort(arr_, 0, n - 1)
 
-    return arr
+    return arr_

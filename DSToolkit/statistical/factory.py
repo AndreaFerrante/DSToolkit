@@ -1,5 +1,18 @@
 import numpy as np
 
+import sys
+from pathlib import Path
+
+
+#############################################
+root_path = Path(__file__).parents
+sorting_  = str( root_path[1] ) + '/sorting/'
+
+sys.path.append( sorting_ )
+from quick_sort import *
+#############################################
+
+
 
 ############################################################################################
 # This is a class that collects statistical indexes such as mean, variance and permutations.
@@ -11,6 +24,22 @@ class StatisticalIndexes(object):
 
 	def __init__(self):
 		super().__init__()
+
+
+	def Ranker(self, x:list):
+
+		x_ = quick_sort(x)
+		n  = len(x)
+		r  = []
+
+		for i in range(n):
+			for j in range(n):
+
+				if x[i] == x_[j]:
+					r.append(j + 1)
+					break
+
+		return r
 
 
 	def Factorial(self, n:int):
