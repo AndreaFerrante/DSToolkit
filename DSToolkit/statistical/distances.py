@@ -7,7 +7,7 @@ import numpy as np
 # Distances measure similarities between features (both numeric and categorical).
 #
 # Distances are used in a lot of fields: in Machine Learning inside methods (such as the 
-# KNN or the cosine similarity used inside the colloborative filtering tecnique).
+# k-Means or the cosine similarity used inside the colloborative filtering tecnique).
 #########################################################################################
 
 
@@ -17,31 +17,31 @@ class Distances(object):
 		super().__init__()
 
 
-	def Euclidean(self, x:list, y:list):
+	def Euclidean(self, point_1:list, point_2:list):
 
 		'''
 		Euclidean distance measures distance between points in a linear space. When the space we
 		are considering is high dimensional, it suffers from the curse of dimensionality.
 
-		param x: first point in form of [float, float]
-		param y: second point in form of [float, float]
+		param point_1: first point in form of [float, float]
+		param point_2: second point in form of [float, float]
 		'''
 
-		pass
+		return ( sum( (x - y) ** 2 for x, y in zip(points_1, points_2) ) ) ** 0.5
 
 
-	def Manhattan(self, x:list, y:list):
+	def Manhattan(self, points_1:list, points_2:list):
 
 		'''
 		Manhattan distance refers to the distance between two vectors if they could only move 
 		by following right angles. It takes its name from New York Manhattan hood where streets 
 		are forming almost always squre root angles against each other.
 
-		param x: first point in form of [float, float]
-		param y: second point in form of [float, float]
+		points_1: first point in form of list
+		points_2: second point in form of list
 		'''
 
-		pass
+		return sum( abs(x - y) for x, y in zip(points_1, points_2) )
 
 
 	def Minkowski(self, x:list, y:list):
@@ -84,6 +84,11 @@ class Distances(object):
 		'''
 
 		pass
+
+
+x = [2, 4]
+y = [5, 6]
+print( ( sum( (x - y)**2 for x, y in zip(x, y) ) ) ** 0.5 )
 
 
 
