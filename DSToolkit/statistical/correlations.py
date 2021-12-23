@@ -47,9 +47,9 @@ class Correlations(object):
 		'''
 		Spearman correlation index is a non-parametric index for correlations.
 		This correlation index wants the variables to be sortable since it performs correlation
-	    measuring given the rank of the variables. 
-	    Differently from Pearson correlation index, Spearman correlation index measures how well 
-	    the relationship between two variables could be described by a monotonic relationship function.
+		measuring given the rank of the variables. 
+		Differently from Pearson correlation index, Spearman correlation index measures how well 
+		the relationship between two variables could be described by a monotonic relationship function.
 		Prectically, this index is nothing more than a sub-case of the Pearson correlation index 
 		performed over ranks.
 
