@@ -75,8 +75,8 @@ class Distances(object):
 
 		'''
 		Cosine similarity measure the distance between two vectors getting the cosine among them.
-		If the cosine is close two one, these two vector are equal. If the cosine is almost equal
-		to minus one, these two vector are dissimilar.
+		If the cosine is close two one, these two vectors are equal. If the cosine is almost equal
+		to minus one, these two vectors are dissimilar.
 		in order to be compared the vector must have same length.
 
 		param x: is it the first vector in form [1,2,4,5]
