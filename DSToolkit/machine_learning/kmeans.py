@@ -5,11 +5,23 @@
 
 
 import random
+import sys
+from pathlib import Path
 
 
-########################################################################################################################
-# HELPER FUNCTIONS...
+#############################################
+root_path    = Path(__file__).parents
+statistical_ = str( root_path[1] ) + '/statistical/'
 
+sys.path.append( statistical_ )
+from distances import *
+
+euclidean = Distances()
+#############################################
+
+
+
+# This function is an example of the function one may use to get Euclidean distance !
 def get_distance(point_1, point_2):
     return ( (point_1[0] - point_2[0])**2 + (point_1[1] - point_2[1])**2 )**0.5
 
@@ -24,7 +36,7 @@ def get_labels(data, centroids):
         label    = None
 
         for i, centroid in enumerate(centroids):
-            new_dist = get_distance(point, centroid)
+            new_dist = euclidean.Euclidean(point, centroid)
             if min_dist > new_dist:
                 min_dist = new_dist
                 label = i
@@ -55,7 +67,7 @@ def should_stop(old_centroids, centroids, threshold=1e-5):
     total_movement = 0
 
     for old_point, new_point in zip(old_centroids, centroids):
-        total_movement += get_distance(old_point, new_point)
+        total_movement += euclidean.Euclidean(old_point, new_point)
 
     return total_movement < threshold
 

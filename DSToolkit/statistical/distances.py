@@ -1,6 +1,3 @@
-import numpy as np
-
-
 #########################################################################################
 # This is a class that collects data science "distances methods".
 #
@@ -17,14 +14,14 @@ class Distances(object):
 		super().__init__()
 
 
-	def Euclidean(self, point_1:list, point_2:list):
+	def Euclidean(self, points_1:list, points_2:list):
 
 		'''
 		Euclidean distance measures distance between points in a linear space. When the space we
 		are considering is high dimensional, it suffers from the curse of dimensionality.
 
-		param point_1: first point in form of [float, float]
-		param point_2: second point in form of [float, float]
+		param points_1: first point in form of [float, float]
+		param points_2: second point in form of [float, float]
 		'''
 
 		return ( sum( (x - y) ** 2 for x, y in zip(points_1, points_2) ) ) ** 0.5
@@ -84,16 +81,4 @@ class Distances(object):
 		'''
 
 		pass
-
-
-x = [2, 4]
-y = [5, 6]
-print( ( sum( (x - y)**2 for x, y in zip(x, y) ) ) ** 0.5 )
-
-
-
-
-
-
-
 
