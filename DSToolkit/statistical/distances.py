@@ -55,17 +55,26 @@ class Distances(object):
 		pass
 
 
-	def Hamming(self, x, y):
+	def Hamming(self, x:str, y:str):
 
 		'''
-		Hamming distance (used for categorical features) measures the distance in terms of different
+		Hamming distance (used for categorical features such as strings) measures the distance in terms of different
 		values between two vectors. It is tipically used to measure the difference between two strings.
 
 		param x: first object (i.e. "Andrea")
 		param y: second point object (i.e. "Annrea")
 		'''
 
-		pass
+		assert len(x) == len(y)
+
+		distance = 0
+		length   = len(x)
+
+		for i in range(length):
+			if x[i] != y[i]:
+				distance +=1
+
+		return (length, distance)
 
 
 	def CosineSimilarity(self, x:list, y:list):
