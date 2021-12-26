@@ -7,6 +7,7 @@
 # k-Means or the cosine similarity used inside the colloborative filtering tecnique).
 #########################################################################################
 
+import numpy as np
 
 class Distances(object):
 
@@ -81,7 +82,7 @@ class Distances(object):
 
 		'''
 		Cosine similarity measure the distance between two vectors getting the cosine among them.
-		If the cosine is close two one, these two vectors are equal. If the cosine is almost equal
+		If the cosine is close to one, these two vectors are equal. If the cosine is almost equal
 		to minus one, these two vectors are dissimilar.
 		in order to be compared the vector must have same length.
 
@@ -89,5 +90,8 @@ class Distances(object):
 		param y: is it the first vector in form [1,2,4,7]
 		'''
 
-		pass
+		dot    = np.dot( x, y)
+		norm_x = ( sum( [ k**2 for k in x ] ) ) ** 0.5
+		norm_y = ( sum( [ k**2 for k in y ] ) ) ** 0.5
 
+		return dot / (norm_x * norm_y)
