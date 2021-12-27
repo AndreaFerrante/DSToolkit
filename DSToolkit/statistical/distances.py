@@ -1,13 +1,13 @@
 #########################################################################################
 # This is a class that collects data science "distances methods".
-#
 # Distances measure similarities between features (both numeric and categorical).
-#
 # Distances are used in a lot of fields: in Machine Learning inside methods (such as the 
 # k-Means or the cosine similarity used inside the colloborative filtering tecnique).
 #########################################################################################
 
+
 import numpy as np
+
 
 class Distances(object):
 
@@ -25,6 +25,8 @@ class Distances(object):
 		param points_2: second point in form of [float, float]
 		'''
 
+		assert len(points_1) == len(points_2)
+
 		return ( sum( (x - y) ** 2 for x, y in zip(points_1, points_2) ) ) ** 0.5
 
 
@@ -38,6 +40,8 @@ class Distances(object):
 		points_1: first point in form of list
 		points_2: second point in form of list
 		'''
+
+		assert len(points_1) == len(points_2)
 
 		return sum( abs(x - y) for x, y in zip(points_1, points_2) )
 
@@ -53,6 +57,7 @@ class Distances(object):
 
 		param x: first point in form of [float, float]
 		param y: second point in form of [float, float]
+		param p_order: order of distance magnitude
 		'''
 
 		assert len(x) == len(y)
@@ -99,5 +104,6 @@ class Distances(object):
 		norm_y = ( sum( [ k**2 for k in y ] ) ) ** 0.5
 
 		return dot / (norm_x * norm_y)
+
 
 
