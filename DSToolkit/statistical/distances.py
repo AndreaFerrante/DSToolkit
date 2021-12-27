@@ -42,18 +42,22 @@ class Distances(object):
 		return sum( abs(x - y) for x, y in zip(points_1, points_2) )
 
 
-	def Minkowski(self, x:list, y:list):
+	def Minkowski(self, p_order:float, x:list, y:list):
 
 		'''
 		Minkowski distance refers to the distance a metric used in Normed vector space 
 		(n-dimensional real space), which means that it can be used in a space where distances
 		can be represented as a vector that has a length.
+		When p_order is equal to 1, this distance is the Mahnattan one.
+		When p_order is equal to 2, this distance is the Euclidean one.
 
 		param x: first point in form of [float, float]
 		param y: second point in form of [float, float]
 		'''
 
-		pass
+		assert len(x) == len(y)
+
+		return ( sum( [abs(i - j) ** p_order for i, j in zip(x, y)] ) ) ** (1 / p_order)
 
 
 	def Hamming(self, x:str, y:str):
@@ -95,3 +99,5 @@ class Distances(object):
 		norm_y = ( sum( [ k**2 for k in y ] ) ) ** 0.5
 
 		return dot / (norm_x * norm_y)
+
+
