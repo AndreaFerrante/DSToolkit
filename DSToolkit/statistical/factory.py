@@ -1,4 +1,5 @@
 import numpy as np
+import math
 
 import sys
 from pathlib import Path
@@ -42,17 +43,12 @@ class StatisticalIndexes(object):
 		return r
 
 
-	def Factorial(self, n:int):
+	def Combination(self, n:int, k:int):
 
-		'''
-		...same of from math import factorial !
-		'''
+		num = math.factorial(n)
+		den = math.factorial(k) * math.factorial(n - k) 
 
-		res = 1
-		for i in range(2, n + 1):
-			res *= i
-
-		return res
+		return num / den
 
 
 	def Power(self, base:float, exp:int):

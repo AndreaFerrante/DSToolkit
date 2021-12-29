@@ -25,3 +25,6 @@ def test_insertion_sort():
 	insertion_sort(arr)
 	for j in range(len(arr)):
 		print('Sorted values in arr are: ', arr[j])
+
+
+test_insertion_sort()

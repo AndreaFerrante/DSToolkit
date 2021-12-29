@@ -1,11 +1,14 @@
-import matplotlib.pyplot as plt
+#############################################################
+# This is a class that collects statistical distributions.
+# This distributions are the essential ones to be remembered.
+#############################################################
+
+
 import numpy as np
 import random
 
+from factory import *
 
-
-# This is a class that collects statistica distributions...
-# ..this distributions are ment not to be forgotten since they are the essential ones to be remembered.
 
 
 class StatisticalDistributions(object):
@@ -13,18 +16,6 @@ class StatisticalDistributions(object):
 	def __init__(self):
 		super().__init__()
 
-
-	def _Factorial(self, n:int):
-
-		'''
-		...same of from math import factorial !
-		'''
-
-		res = 1
-		for i in range(2, n + 1):
-			res *= i
-
-		return res
 
 	def Exponential(self, x:float=0, l:float=0, vector:list=None):
 
@@ -67,8 +58,17 @@ class StatisticalDistributions(object):
 			return [ self.Poisson(x=x, l=l, vector=None) for x in vector ]
 
 
+	def Binomial(self, n:int, k:int, p:float):
 
+		'''
+		param n: number of time the experiment is conducted
+		param k: number of time the experiment is a success (k <= n)
+		param p: probability a success occurs
+		'''
 
+		factory_    = StatisticalIndexes()
+		combination = factory_.Combination(n, k)
 
+		return combination * (p ** k) * ( (1 - p) ** (n - k) )
 
 
