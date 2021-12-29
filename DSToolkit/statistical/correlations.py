@@ -46,30 +46,48 @@ class Correlations(object):
 
 		'''
 		Spearman correlation index is a non-parametric index for correlations.
-		This correlation index wants the variables to be sortable since it performs correlation
-		measuring given the rank of the variables. 
+		This correlation index wants the variables to be sortable since it performs correlation measuring 
+		the rank of the variables. 
 		Differently from Pearson correlation index, Spearman correlation index measures how well 
-		the relationship between two variables could be described by a monotonic relationship function.
-		Prectically, this index is nothing more than a sub-case of the Pearson correlation index 
+		the relationship between two variables could be described by a monotonic function.
+		Practically, this index is nothing more than a sub-case of the Pearson correlation index 
 		performed over ranks.
 
 		param x: first list to analyze to see how much correlation is in place against y variable
 		param y: second list to analyze to see how much correlation is in place against x variable
 		'''
 
+		SI         = StatisticalIndexes()
+
+		x_rank     = SI.Ranker(x) # Rank x array...
+		y_rank     = SI.Ranker(y) # Rank y array...
+
+		covariance = SI.Covariance(x_rank, y_rank)
+		dev_std_x  = SI.StandardDeviationSample(x_rank)
+		dev_std_y  = SI.StandardDeviationSample(y_rank)
+
+		return round(covariance / (dev_std_x * dev_std_y), 9)
+		
+
+	def KendallCorrelation(self, x:list, y:list):
+
+		'''
+		'''
+
 		pass
 
 
 
-x = [1,3,6,2,11]
-y = [1,3,6,12,11]
+x = [12,14,19,16]
+y = [13,15,16,17]
 
+from scipy.stats import spearmanr
 
 s  = StatisticalIndexes()
 si = Correlations()
-print(y)
-print('ranker', s.Ranker(y))
-#print(si.PearsonCorrelation(x, y))
-#print(np.corrcoef(x, y))
+
+print('Spearman mine',  si.SpearmanCorrelation(x, y))
+print('Spearman scipy', spearmanr(x, y))
+
 
 
