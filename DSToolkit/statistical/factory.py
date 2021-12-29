@@ -107,6 +107,8 @@ class StatisticalIndexes(object):
 		Attention: X and Y variables must have same array length.
 		'''
 
+		assert len(x) == len(y)
+
 		mean_x = self.Mean(x)
 		mean_y = self.Mean(y)
 
@@ -114,8 +116,6 @@ class StatisticalIndexes(object):
 		num = sum( [ (x[j] - mean_x) * (y[j] - mean_y) for j in range( den + 1 ) ] )
 
 		return num / den
-
-
 
 
 
