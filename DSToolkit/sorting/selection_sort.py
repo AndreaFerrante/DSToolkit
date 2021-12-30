@@ -13,5 +13,5 @@ def selection_sort(arr):
 	return arr
 
 
-arr = [13,14,7,6,4,8,7,11,1,12]
+arr = [-19,14,7,6,4,8,7,11,1,12]
 print(selection_sort(arr))
