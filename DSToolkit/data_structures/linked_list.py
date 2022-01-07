@@ -21,6 +21,13 @@ class LinkedList:
 			print(value.data)
 			value = value.next
 
+	def AddAtBeginning(self, new_data):
+
+		NewHead      = Node(new_data)
+		NewHead.next = self.head
+		self.head    = NewHead
+
+
 
 n1      = Node(1)
 n2      = Node(2)
@@ -28,8 +35,9 @@ n3      = Node(3)
 
 linked_list      = LinkedList()
 linked_list.head = n1
-n1.next = n2
-n2.next = n3
+n1.next          = n2
+n2.next          = n3
+
 
 linked_list.PrintList()
 
