@@ -27,6 +27,16 @@ class LinkedList:
 		NewHead.next = self.head
 		self.head    = NewHead
 
+	def AddAtEnd(self, new_data):
+
+		LastNode = Node(new_data)
+		value    = self.head
+		
+		while value.next:
+			value = value.next
+
+		value.next = LastNode
+
 
 
 n1      = Node(1)
@@ -39,5 +49,7 @@ n1.next          = n2
 n2.next          = n3
 
 
+linked_list.AddAtBeginning(111)
+linked_list.AddAtEnd(222)
 linked_list.PrintList()
 
