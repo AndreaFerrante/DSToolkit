@@ -26,7 +26,6 @@ def linear_search(el, arr:list=None) -> bool:
 		return
 
 	n   = len(arr)
-	arr = quick_sort(arr)
 
 	for i in range(n):
 		if el == arr[i]:
