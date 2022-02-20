@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 
-class Monetcarlo(object):
+class Montecarlo(object):
 
 	'''
 	This class manages Montecarlo methods
@@ -12,7 +12,7 @@ class Monetcarlo(object):
 	
 	def __init__(self, data):
 	
-		super(Monetcarlo, self).__init__()
+		super(Montecarlo, self).__init__()
 		self.data = data
 
 
