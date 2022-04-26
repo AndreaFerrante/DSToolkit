@@ -48,7 +48,6 @@ linked_list.head = n1
 n1.next          = n2
 n2.next          = n3
 
-
 linked_list.AddAtBeginning(111)
 linked_list.AddAtEnd(222)
 linked_list.PrintList()
