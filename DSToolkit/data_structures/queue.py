@@ -1,21 +1,19 @@
-from collections import deque
 
 class Queue(object):
 
 	'''
-	Queues are lists that insert data using FIFO manner: the first element inserted is the one that is
-	extracted first (first in first out). The opposite data structure is the stack (LIFO, last in first out)
+	Queues are lists in which data is extracted in a First In First Out (FIFO)
 	'''
 
 	def __init__(self):
 		super().__init__()
-		self.queue = deque()
+		self.queue = list()
 
 	def insert(self, data):
 		self.queue.append(data)
 
 	def retrieve(self):
-		return self.queue.pop()
+		return self.queue.pop(0)
 
 	def print_elements(self):
 		for el in self.queue:
