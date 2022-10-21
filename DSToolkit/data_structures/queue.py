@@ -1,3 +1,4 @@
+from collections import deque
 
 class Queue(object):
 
@@ -8,15 +9,13 @@ class Queue(object):
 
 	def __init__(self):
 		super().__init__()
-		self.queue = list()
+		self.queue = deque()
 
 	def insert(self, data):
-
 		self.queue.append(data)
 
 	def retrieve(self):
-
-		return self.queue.pop(0)
+		return self.queue.pop()
 
 	def print_elements(self):
 		for el in self.queue:
@@ -29,6 +28,9 @@ q.insert(10)
 q.insert(111)
 q.insert('element')
 
+print('elements with no pop are')
 q.print_elements()
+
+print('elements after pop are')
 q.retrieve()
 q.print_elements()
