@@ -6,7 +6,7 @@ setup(
     version                       = '0.0.2',
     description                   = 'Data Science practical methods collection',
     author                        = 'Andrea Ferrante',
-    author_email                  = 'andreaferrante1986@gmail.com',
+    author_email                  = 'nonicknamethankyou@gmail.com',
     classifiers                   = ['Development Status :: 3 - Alpha',
                                      'Intended Audience :: Developers',
                                      'Topic :: Software Development :: Build Tools',
