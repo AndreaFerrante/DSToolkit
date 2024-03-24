@@ -1,4 +1,11 @@
-# A binary tree is 
+'''
+A binary tree is a hierarchical data structure in which each node has at most two children,
+referred to as the left child and the right child.
+It is a specific type of tree where every node or vertex contains a key (value) and pointers to its left
+and right children. The topmost node is known as the root node. Binary trees are used in various applications,
+including implementing binary search trees and binary heaps, supporting operations like search, insert,
+and delete with efficient time complexity.
+'''
 
 
 class BinaryTree:
@@ -73,7 +80,6 @@ class BinaryTree:
         root.left, root.right = root.right, root.left
         self.__solveInvert(root.left)
         self.__solveInvert(root.right)
-
 
 
 bt = BinaryTree(10)

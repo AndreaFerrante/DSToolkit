@@ -58,6 +58,7 @@ class MaxHeap:
     def __str__(self):
         return str(self.heap)
 
+
 # Example usage
 heap = MaxHeap()
 heap.insert(3)
@@ -66,6 +67,7 @@ heap.insert(15)
 heap.insert(5)
 heap.insert(4)
 heap.insert(45)
+
 
 print(f"Max Heap: {heap}")
 print(f"Extracted Max: {heap.extract_max()}")
